@@ -1,0 +1,748 @@
+Guardá este código en un archivo llamado `index.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1e3a29">
+
+  <!-- Metadatos de Navegador y SEO -->
+  <title>80 Años de Armando Enciso — Invitación Especial</title>
+  <meta name="description" content="Acompáñanos a celebrar los 80 años de Armando Enciso el sábado 14 de noviembre de 2026, 20:00 hs en Granja Madel, Caacupé. Confirma tu asistencia.">
+  <link rel="canonical" href="https://leydenpacher.github.io/cumple-armando-enciso/">
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leydenpacher.github.io/cumple-armando-enciso/">
+  <meta property="og:site_name" content="80 Años de Armando Enciso">
+  <meta property="og:title" content="¡Estás invitado a los 80 años de Armando Enciso!">
+  <meta property="og:description" content="Sábado 14 de noviembre de 2026, 20:00 hs — Granja Madel, Caacupé. “La vida está hecha de momentos, y los mejores son aquellos que compartimos”. Confirma tu asistencia.">
+  <meta property="og:image" content="https://leydenpacher.github.io/cumple-armando-enciso/img/afiche-80-anos.webp">
+  <meta property="og:image:secure_url" content="https://leydenpacher.github.io/cumple-armando-enciso/img/afiche-80-anos.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Afiche conmemorativo de los 80 años de Armando Enciso con fotos familiares y detalles del evento">
+  <meta property="og:locale" content="es_PY">
+
+  <!-- Twitter / X Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://leydenpacher.github.io/cumple-armando-enciso/">
+  <meta name="twitter:title" content="80 Años de Armando Enciso — Invitación Especial">
+  <meta name="twitter:description" content="Sábado 14 de noviembre de 2026, 20:00 hs — Granja Madel, Caacupé. Confirma tu asistencia aquí.">
+  <meta name="twitter:image" content="https://leydenpacher.github.io/cumple-armando-enciso/img/afiche-80-anos.webp">
+  <meta name="twitter:image:alt" content="Afiche conmemorativo de los 80 años de Armando Enciso">
+
+  <style>
+    :root {
+      --color-primary: #1e3a29;
+      --color-primary-light: #2c563d;
+      --color-accent: #c49a45;
+      --color-accent-dark: #8c671b;
+      --color-bg: #f7f9f6;
+      --color-surface: #ffffff;
+      --color-text: #202621;
+      --color-text-muted: #4e5a52;
+      --color-border: #d4e0d8;
+      --color-focus: #0f52ba;
+      --color-whatsapp: #25d366;
+      --color-whatsapp-dark: #0b3e1c;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-serif: Georgia, "Times New Roman", serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -45px;
+      left: 12px;
+      background: var(--color-primary);
+      color: #ffffff;
+      padding: 10px 18px;
+      z-index: 1000;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: var(--radius-sm);
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 12px;
+      outline: 3px solid var(--color-focus);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--color-focus);
+      outline-offset: 3px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    .hero-card {
+      background: linear-gradient(175deg, #183323 0%, var(--color-primary) 65%, #13281c 100%);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 36px 20px 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      background: rgba(196, 154, 69, 0.15);
+      border: 1px solid var(--color-accent);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      line-height: 1.15;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #dce7e0;
+      font-weight: 400;
+      margin-bottom: 18px;
+    }
+
+    .hero-quote {
+      font-style: italic;
+      font-size: 1.05rem;
+      color: #f1f6f3;
+      max-width: 480px;
+      margin: 0 auto 24px;
+      line-height: 1.5;
+    }
+
+    .hero-poster-container {
+      margin: 12px auto 8px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      max-width: 320px;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.35);
+      background: #0f1d14;
+    }
+
+    .hero-poster-container img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .section-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: 24px 20px;
+      margin-top: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--color-border);
+    }
+
+    .section-heading {
+      font-size: 1.3rem;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 8px 0 4px;
+    }
+
+    .countdown-box {
+      background: #edf3ee;
+      border-radius: var(--radius-sm);
+      padding: 12px 4px;
+      text-align: center;
+      border: 1px solid #d4e2d7;
+    }
+
+    .countdown-number {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      display: block;
+      line-height: 1.1;
+    }
+
+    .countdown-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    .details-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .detail-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .detail-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: #eef4f0;
+      color: var(--color-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #d4e2d7;
+    }
+
+    .detail-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .detail-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.35;
+    }
+
+    .detail-value small {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+    }
+
+    .actions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 480px) {
+      .actions-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      min-height: 52px;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s ease, transform 0.1s ease;
+      touch-action: manipulation;
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: var(--color-primary-light);
+    }
+
+    .btn-secondary {
+      background: #edf3ee;
+      color: var(--color-primary);
+      border: 1px solid #c9dcd0;
+    }
+    .btn-secondary:hover {
+      background: #e0ece3;
+    }
+
+    .btn-accent {
+      background: var(--color-whatsapp);
+      color: var(--color-whatsapp-dark);
+      font-weight: 800;
+    }
+    .btn-accent:hover {
+      background: #1ebc59;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: #e7ede9;
+      aspect-ratio: 1;
+      border: 1px solid var(--color-border);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      color: var(--color-text);
+    }
+
+    .form-control {
+      width: 100%;
+      min-height: 50px;
+      padding: 10px 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: #fafdfa;
+      color: var(--color-text);
+    }
+    .form-control:focus {
+      border-color: var(--color-primary);
+    }
+
+    .status-msg {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      min-height: 24px;
+    }
+    .status-msg.success { color: #155724; }
+    .status-msg.error { color: #842029; }
+
+    footer {
+      text-align: center;
+      margin-top: 36px;
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+    }
+  </style>
+</head>
+<body>
+  <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+
+  <div class="container">
+    <header class="hero-card">
+      <span class="hero-badge">Gran Celebración</span>
+      <h1 class="hero-title">Armando Enciso</h1>
+      <p class="hero-subtitle">¡Cumple 80 Años!</p>
+
+      <blockquote class="hero-quote">
+        “La vida está hecha de momentos, y los mejores son aquellos que compartimos.”
+      </blockquote>
+
+      <div class="hero-poster-container">
+        <picture>
+          <source srcset="img/afiche-80-anos.webp" type="image/webp">
+          <img src="img/afiche-80-anos.webp" 
+               alt="Afiche oficial de los 80 años de Armando Enciso, con fotos familiares y fecha 14 de noviembre de 2026"
+               width="320" height="420"
+               onerror="cargarImagenRespaldo(this, 'Afiche 80 Años')">
+        </picture>
+      </div>
+    </header>
+
+    <main id="contenido-principal">
+      <!-- Cuenta Regresiva -->
+      <section class="section-card" aria-labelledby="titulo-cuenta">
+        <h2 id="titulo-cuenta" class="section-heading">
+          <span aria-hidden="true">⏳</span> Faltan para el festejo
+        </h2>
+        <div class="countdown-grid" id="countdown" aria-live="polite">
+          <div class="countdown-box">
+            <span class="countdown-number" id="dias">--</span>
+            <span class="countdown-label">Días</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="horas">--</span>
+            <span class="countdown-label">Horas</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="minutos">--</span>
+            <span class="countdown-label">Min</span>
+          </div>
+          <div class="countdown-box">
+            <span class="countdown-number" id="segundos">--</span>
+            <span class="countdown-label">Seg</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dónde y Cuándo -->
+      <section class="section-card" aria-labelledby="titulo-detalles">
+        <h2 id="titulo-detalles" class="section-heading">
+          <span aria-hidden="true">📍</span> Dónde y Cuándo
+        </h2>
+
+        <ul class="details-list">
+          <li class="detail-item">
+            <div class="detail-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <div>
+              <span class="detail-title">Fecha y Hora</span>
+              <p class="detail-value">
+                Sábado 14 de Noviembre de 2026
+                <small>Inicio: 20:00 hs</small>
+              </p>
+            </div>
+          </li>
+
+          <li class="detail-item">
+            <div class="detail-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <span class="detail-title">Lugar</span>
+              <p class="detail-value">
+                Granja Madel
+                <small>Caacupé Almada Km 62.100</small>
+              </p>
+            </div>
+          </li>
+
+          <li class="detail-item">
+            <div class="detail-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"></path></svg>
+            </div>
+            <div>
+              <span class="detail-title">Tenida</span>
+              <p class="detail-value">Casual</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="actions-grid">
+          <a href="https://maps.app.goo.gl/g6ahQU2gLPGsBAwp6?g_st=ipc" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn btn-secondary">
+            <span aria-hidden="true">🗺️</span> Ver en Google Maps
+          </a>
+
+          <button type="button" id="btn-descargar-ics" class="btn btn-secondary">
+            <span aria-hidden="true">📅</span> Agendar al Calendario
+          </button>
+        </div>
+
+        <div class="actions-grid" style="margin-top: 12px;">
+          <button type="button" id="btn-compartir" class="btn btn-primary" style="grid-column: 1 / -1;">
+            <span aria-hidden="true">📤</span> Compartir Invitación
+          </button>
+        </div>
+        <div id="status-compartir" class="status-msg" role="status" aria-live="polite"></div>
+      </section>
+
+      <!-- Galería de Fotos -->
+      <section class="section-card" aria-labelledby="titulo-galeria">
+        <h2 id="titulo-galeria" class="section-heading">
+          <span aria-hidden="true">📷</span> Recuerdos del Abuelo
+        </h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="img/abuelo-ganado.webp" 
+                 alt="Armando Enciso con sombrero y anteojos junto a una tranquera y vacas en el campo"
+                 loading="lazy"
+                 onerror="cargarImagenRespaldo(this, 'Campo y Ganado')">
+          </div>
+          <div class="gallery-item">
+            <img src="img/abuelo-balcon.webp" 
+                 alt="Armando Enciso sonriendo en un balcón campestre con techos de tejas y árboles al fondo"
+                 loading="lazy"
+                 onerror="cargarImagenRespaldo(this, 'Balcón')">
+          </div>
+          <div class="gallery-item">
+            <img src="img/abuelo-obra.webp" 
+                 alt="Armando Enciso con casco y chaleco reflectivo frente a camiones y maquinaria de trabajo"
+                 loading="lazy"
+                 onerror="cargarImagenRespaldo(this, 'Trabajo y Obra')">
+          </div>
+          <div class="gallery-item">
+            <img src="img/abuelo-cabrita.webp" 
+                 alt="Armando Enciso sosteniendo con cariño una cabrita negra en el campo verde"
+                 loading="lazy"
+                 onerror="cargarImagenRespaldo(this, 'En la Granja')">
+          </div>
+        </div>
+      </section>
+
+      <!-- Confirmación Asistencia -->
+      <section class="section-card" aria-labelledby="titulo-rsvp">
+        <h2 id="titulo-rsvp" class="section-heading">
+          <span aria-hidden="true">✉️</span> Confirmar Asistencia
+        </h2>
+        <p style="margin-bottom: 16px; color: var(--color-text-muted);">
+          Por favor avísanos antes del evento para organizar la mejor atención para todos.
+        </p>
+
+        <form id="form-rsvp" novalidate>
+          <div class="form-group">
+            <label for="nombre" class="form-label">Tu Nombre y Apellido *</label>
+            <input type="text" id="nombre" class="form-control" placeholder="Ej. Juan Pérez" required autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label for="asistentes" class="form-label">Total de Personas *</label>
+            <input type="number" id="asistentes" class="form-control" min="1" max="15" value="1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje" class="form-label">Mensaje para el Abuelo (opcional)</label>
+            <textarea id="mensaje" class="form-control" rows="2" placeholder="¡Felicidades abuelo por tus 80 años!"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-accent" style="width: 100%;">
+            <span aria-hidden="true">💬</span> Confirmar por WhatsApp
+          </button>
+        </form>
+        <div id="status-rsvp" class="status-msg" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Celebración de los 80 Años de Armando Enciso</p>
+      <p><small>Granja Madel — Caacupé, Paraguay</small></p>
+    </footer>
+  </div>
+
+  <script>
+    const CONFIG = {
+      homenajeado: "Armando Enciso",
+      edad: 80,
+      whatsapp: "595982112114",
+      targetTimestamp: new Date(2026, 10, 14, 20, 0, 0).getTime(), // Noviembre es mes 10 (0-index)
+      lugar: "Granja Madel, Caacupé Almada Km 62.100, Paraguay",
+      mapsUrl: "https://maps.app.goo.gl/g6ahQU2gLPGsBAwp6?g_st=ipc"
+    };
+
+    // Respaldo visual si la imagen falla o tarda en cargar
+    function cargarImagenRespaldo(img, etiqueta) {
+      img.onerror = null;
+      const svg = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+          <rect width="400" height="400" fill="#2c563d"/>
+          <circle cx="200" cy="180" r="48" fill="#c49a45"/>
+          <text x="200" y="270" font-family="sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">${etiqueta}</text>
+        </svg>`;
+      img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    }
+
+    // Cuenta Regresiva
+    function actualizarCuentaRegresiva() {
+      const ahora = new Date().getTime();
+      const distancia = CONFIG.targetTimestamp - ahora;
+
+      const elDias = document.getElementById("dias");
+      const elHoras = document.getElementById("horas");
+      const elMin = document.getElementById("minutos");
+      const elSeg = document.getElementById("segundos");
+
+      if (distancia <= 0) {
+        document.getElementById("countdown").innerHTML = "<p style='grid-column: 1 / -1; text-align: center; font-weight: bold; font-size: 1.2rem; color: #1e3a29;'>🎉 ¡Hoy celebramos los 80 años de Don Armando! 🎉</p>";
+        return;
+      }
+
+      const d = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      elDias.textContent = String(d).padStart(2, '0');
+      elHoras.textContent = String(h).padStart(2, '0');
+      elMin.textContent = String(m).padStart(2, '0');
+      elSeg.textContent = String(s).padStart(2, '0');
+    }
+    setInterval(actualizarCuentaRegresiva, 1000);
+    actualizarCuentaRegresiva();
+
+    // Generar archivo .ics con hora local flotante (20:00 exactas en iOS y Android)
+    document.getElementById("btn-descargar-ics").addEventListener("click", () => {
+      const icsData = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//Armando Enciso 80 Anos//ES",
+        "CALSCALE:GREGORIAN",
+        "BEGIN:VEVENT",
+        "SUMMARY:80 Años de Armando Enciso",
+        "DESCRIPTION:Festejo de los 80 años de Don Armando en Granja Madel. Tenida Casual.\\nUbicación: " + CONFIG.mapsUrl,
+        "LOCATION:" + CONFIG.lugar,
+        "DTSTART:20261114T200000",
+        "DTEND:20261115T030000",
+        "STATUS:CONFIRMED",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([icsData], { type: "text/calendar;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.setAttribute("download", "cumpleanos-armando-enciso-80.ics");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    });
+
+    // Compartir Invitación (Web Share API nativa + portapapeles)
+    document.getElementById("btn-compartir").addEventListener("click", async () => {
+      const statusDiv = document.getElementById("status-compartir");
+      statusDiv.textContent = "";
+
+      const shareData = {
+        title: "80 Años de Armando Enciso",
+        text: "¡Te invito a celebrar los 80 años de Don Armando Enciso! Sábado 14 de noviembre de 2026 en Granja Madel.",
+        url: window.location.href.split('#')[0]
+      };
+
+      if (navigator.share) {
+        try {
+          await navigator.share(shareData);
+          statusDiv.className = "status-msg success";
+          statusDiv.textContent = "¡Invitación compartida con éxito!";
+        } catch (err) {
+          if (err.name !== "AbortError") {
+            copiarAlPortapapeles(shareData.url, statusDiv);
+          }
+        }
+      } else {
+        copiarAlPortapapeles(shareData.url, statusDiv);
+      }
+    });
+
+    function copiarAlPortapapeles(url, statusDiv) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+          statusDiv.className = "status-msg success";
+          statusDiv.textContent = "Enlace copiado al portapapeles. ¡Pégalo en tu chat!";
+        }).catch(() => {
+          statusDiv.className = "status-msg error";
+          statusDiv.textContent = "No se pudo copiar automáticamente. Puedes copiar la dirección del navegador.";
+        });
+      } else {
+        statusDiv.className = "status-msg success";
+        statusDiv.textContent = "Copia la dirección del navegador para compartirla.";
+      }
+    }
+
+    // Validación y Envío de Confirmación a WhatsApp
+    document.getElementById("form-rsvp").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const statusDiv = document.getElementById("status-rsvp");
+      statusDiv.textContent = "";
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const asistentes = parseInt(document.getElementById("asistentes").value, 10);
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      if (!nombre) {
+        statusDiv.className = "status-msg error";
+        statusDiv.textContent = "Por favor ingresa tu nombre y apellido.";
+        document.getElementById("nombre").focus();
+        return;
+      }
+
+      if (isNaN(asistentes) || asistentes < 1) {
+        statusDiv.className = "status-msg error";
+        statusDiv.textContent = "La cantidad de personas debe ser al menos 1.";
+        document.getElementById("asistentes").focus();
+        return;
+      }
+
+      let textoWsp = `¡Hola! Confirmo mi asistencia a los 80 años de ${CONFIG.homenajeado}.\n\n`;
+      textoWsp += `👤 Nombre: ${nombre}\n`;
+      textoWsp += `👥 Personas: ${asistentes}\n`;
+      if (mensaje) {
+        textoWsp += `💬 Mensaje: "${mensaje}"\n`;
+      }
+      textoWsp += `\nNos vemos el sábado 14 de noviembre en Granja Madel.`;
+
+      const wspUrl = `https://api.whatsapp.com/send?phone=${CONFIG.whatsapp}&text=${encodeURIComponent(textoWsp)}`;
+      window.open(wspUrl, "_blank", "noopener,noreferrer");
+
+      statusDiv.className = "status-msg success";
+      statusDiv.textContent = "Abriendo WhatsApp para enviar tu confirmación...";
+    });
+  </script>
+</body>
+</html>
+```
